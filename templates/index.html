@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>BuildMyAsset — Should I Buy This House, Car or Plot?</title>
+  <meta name="description" content="Free financial decision tool. Find out if you can afford to buy a house, car or plot. Analyses EMI, debt-to-income ratio, hidden costs, rent vs buy, stress score and more. Supports INR, USD, EUR, GBP and 4 more currencies."/>
+  <meta name="keywords" content="should I buy a house, home loan calculator, EMI calculator India, can I afford a house, property affordability calculator, rent vs buy calculator, car loan calculator, plot investment calculator, financial decision tool, BuildMyAsset"/>
+  <meta name="author" content="BuildMyAsset"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://buildmyasset.app/"/>
+
+  <!-- ═══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ═══ -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://buildmyasset.app/"/>
+  <meta property="og:title"       content="BuildMyAsset — Should I Buy This House, Car or Plot?"/>
+  <meta property="og:description" content="Free smart financial engine. Get a clear Safe / Risky / Not Recommended verdict before buying any asset. Covers EMI, hidden costs, stress score, rent vs buy and more."/>
+  <meta property="og:image"       content="https://buildmyasset.app/static/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height"content="630"/>
+  <meta property="og:site_name"   content="BuildMyAsset"/>
+  <meta property="og:locale"      content="en_IN"/>
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:url"         content="https://buildmyasset.app/"/>
+  <meta name="twitter:title"       content="BuildMyAsset — Should I Buy This Asset?"/>
+  <meta name="twitter:description" content="Free tool to decide if you should buy a house, car or plot. EMI, stress score, hidden costs, rent vs buy — all in one place."/>
+  <meta name="twitter:image"       content="https://buildmyasset.app/static/og-image.png"/>
+
+  <!-- ═══ FAVICON ═══ -->
+  <link rel="icon"             type="image/svg+xml"  href="/static/favicon.svg"/>
+  <link rel="apple-touch-icon" sizes="180x180"       href="/static/favicon.svg"/>
+  <meta name="theme-color" content="#0D6B4A" media="(prefers-color-scheme: light)"/>
+  <meta name="theme-color" content="#00D4AA" media="(prefers-color-scheme: dark)"/>
+
+  <!-- ═══ STRUCTURED DATA — WebApplication ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BuildMyAsset",
+    "url": "https://buildmyasset.app/",
+    "description": "A smart financial decision engine that tells you whether you should buy a house, car, or plot based on your income, expenses, savings and risk profile.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "featureList": [
+      "EMI Calculator",
+      "Debt-to-Income Ratio Analysis",
+      "Financial Stress Meter",
+      "Rent vs Buy Comparison",
+      "Hidden Cost Detection",
+      "Cash Flow Timeline",
+      "Income Shock Simulation",
+      "Multi-Currency Support"
+    ],
+    "screenshot": "https://buildmyasset.app/static/og-image.png",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildMyAsset"
+    }
+  }
+  </script>
+
+  <!-- ═══ STRUCTURED DATA — FAQPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I buy a house or rent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuildMyAsset compares the 10-year cost of renting vs buying based on your property price, loan details, and local appreciation rates to give you a clear recommendation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much home loan can I afford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A safe home loan keeps your total EMI burden below 35% of your monthly income. BuildMyAsset calculates this automatically and suggests an affordable price if your chosen property exceeds your limit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good debt-to-income ratio for a home loan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Below 35% is considered safe. Between 35-50% is risky. Above 50% is not recommended by most financial advisors and lenders."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BuildMyAsset free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, BuildMyAsset is completely free. No signup, no ads, no hidden fees."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,800;1,9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+<!-- ══════════ LANDING ══════════ -->
+<div id="landingPage">
+  <nav class="land-nav">
+    <div class="land-logo">Build<span class="logo-accent">My</span>Asset</div>
+    <div class="nav-right">
+      <div class="land-tag">Financial Decision Engine</div>
+      <button class="theme-btn" onclick="toggleTheme()" title="Toggle Dark / Light">
+        <div class="t-knob"></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="land-body">
+    <div class="land-left">
+      <p class="land-eyebrow">Smart financial decisions, instantly</p>
+      <h1 class="land-title">Should You Buy<br><em>This Asset?</em></h1>
+      <p class="land-desc">A comprehensive financial engine that analyses your income, expenses, savings, and dependencies — then gives you a clear verdict you can trust.</p>
+
+      <div class="land-features">
+        <div class="lf-row"><span class="lf-dot"></span>Dynamic expense & dependency tracking</div>
+        <div class="lf-row"><span class="lf-dot"></span>Financial Stress Meter (0–100)</div>
+        <div class="lf-row"><span class="lf-dot"></span>Hidden cost detection & rent vs buy</div>
+        <div class="lf-row"><span class="lf-dot"></span>Cash flow timeline & worst month alert</div>
+        <div class="lf-row"><span class="lf-dot"></span>20% income shock simulation</div>
+        <div class="lf-row"><span class="lf-dot"></span>Multi-currency — ₹ $ € £ and more</div>
+      </div>
+
+      <button class="land-cta" onclick="showApp()">Start Analysis <span class="cta-arr">→</span></button>
+      <p class="land-note">No signup · No ads · 100% free</p>
+    </div>
+
+    <div class="land-right">
+      <div class="preview-card">
+        <div class="pc-top">
+          <span class="pc-tag">🏠 House Analysis</span>
+          <span class="pc-verdict safe">✅ Safe to Buy</span>
+        </div>
+        <div class="pc-meter">
+          <div class="pc-meter-lbl">Financial Stress Score</div>
+          <div class="pc-bar"><div class="pc-bar-fill" style="width:28%"></div></div>
+          <div class="pc-meter-val">28 / 100 · LOW RISK</div>
+        </div>
+        <div class="pc-grid">
+          <div class="pcg-item"><span>EMI</span><strong>₹28,400</strong></div>
+          <div class="pcg-item"><span>Free Cash</span><strong class="pos">₹41,600</strong></div>
+          <div class="pcg-item"><span>DTI</span><strong>31.2%</strong></div>
+          <div class="pcg-item"><span>Loan End</span><strong>52 yrs</strong></div>
+        </div>
+        <div class="pc-exp-label">Top Expenses</div>
+        <div class="pc-exp-row"><span>🏫 School Fees</span><span>₹12,000</span></div>
+        <div class="pc-exp-row"><span>🏥 Health</span><span>₹5,000</span></div>
+        <div class="pc-exp-row"><span>🛒 Groceries</span><span>₹8,000</span></div>
+        <div class="pc-footer">Your finances comfortably support this purchase.</div>
+      </div>
+      <div class="land-quick">
+        <div class="lq-btn" onclick="quickStart('house')">🏠 House</div>
+        <div class="lq-btn" onclick="quickStart('car')">🚗 Car</div>
+        <div class="lq-btn" onclick="quickStart('plot')">🌆 Plot</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ APP ══════════ -->
+<div id="appPage" style="display:none">
+
+  <div class="topbar">
+    <button class="tb-back" onclick="goLanding()">← BuildMyAsset</button>
+    <div class="tb-steps">
+      <span class="tbs active" data-s="1">Asset</span>
+      <span class="tbs-sep">›</span>
+      <span class="tbs" data-s="2">Profile</span>
+      <span class="tbs-sep">›</span>
+      <span class="tbs" data-s="3">Details</span>
+      <span class="tbs-sep">›</span>
+      <span class="tbs" data-s="4">Results</span>
+    </div>
+    <div class="tb-right">
+      <div class="tb-cur-wrap" id="tbCurWrap">
+        <div class="tb-cur" id="tbCur" onclick="toggleCurrencyDropdown()">
+          <span id="tbCurFlag">🇮🇳</span>
+          <span id="tbCurText">₹ INR</span>
+          <span class="tb-cur-arrow">▾</span>
+        </div>
+        <div class="cur-dropdown" id="curDropdown">
+          <div class="cur-dropdown-title">Select Currency</div>
+          <div class="cur-opt active" id="curopt-INR" onclick="pickCurrency('INR','₹','Indian Rupee','🇮🇳',this)">
+            <span class="cur-opt-flag">🇮🇳</span>
+            <span class="cur-opt-code">INR</span>
+            <span class="cur-opt-name">Indian Rupee</span>
+            <span class="cur-opt-sym">₹</span>
+          </div>
+          <div class="cur-opt" id="curopt-USD" onclick="pickCurrency('USD','$','US Dollar','🇺🇸',this)">
+            <span class="cur-opt-flag">🇺🇸</span>
+            <span class="cur-opt-code">USD</span>
+            <span class="cur-opt-name">US Dollar</span>
+            <span class="cur-opt-sym">$</span>
+          </div>
+          <div class="cur-opt" id="curopt-EUR" onclick="pickCurrency('EUR','€','Euro','🇪🇺',this)">
+            <span class="cur-opt-flag">🇪🇺</span>
+            <span class="cur-opt-code">EUR</span>
+            <span class="cur-opt-name">Euro</span>
+            <span class="cur-opt-sym">€</span>
+          </div>
+          <div class="cur-opt" id="curopt-GBP" onclick="pickCurrency('GBP','£','British Pound','🇬🇧',this)">
+            <span class="cur-opt-flag">🇬🇧</span>
+            <span class="cur-opt-code">GBP</span>
+            <span class="cur-opt-name">British Pound</span>
+            <span class="cur-opt-sym">£</span>
+          </div>
+          <div class="cur-opt" id="curopt-AED" onclick="pickCurrency('AED','د.إ','UAE Dirham','🇦🇪',this)">
+            <span class="cur-opt-flag">🇦🇪</span>
+            <span class="cur-opt-code">AED</span>
+            <span class="cur-opt-name">UAE Dirham</span>
+            <span class="cur-opt-sym">د.إ</span>
+          </div>
+          <div class="cur-opt" id="curopt-SGD" onclick="pickCurrency('SGD','S$','Singapore Dollar','🇸🇬',this)">
+            <span class="cur-opt-flag">🇸🇬</span>
+            <span class="cur-opt-code">SGD</span>
+            <span class="cur-opt-name">Singapore Dollar</span>
+            <span class="cur-opt-sym">S$</span>
+          </div>
+          <div class="cur-opt" id="curopt-AUD" onclick="pickCurrency('AUD','A$','Australian Dollar','🇦🇺',this)">
+            <span class="cur-opt-flag">🇦🇺</span>
+            <span class="cur-opt-code">AUD</span>
+            <span class="cur-opt-name">Australian Dollar</span>
+            <span class="cur-opt-sym">A$</span>
+          </div>
+          <div class="cur-opt" id="curopt-CAD" onclick="pickCurrency('CAD','C$','Canadian Dollar','🇨🇦',this)">
+            <span class="cur-opt-flag">🇨🇦</span>
+            <span class="cur-opt-code">CAD</span>
+            <span class="cur-opt-name">Canadian Dollar</span>
+            <span class="cur-opt-sym">C$</span>
+          </div>
+        </div>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" title="Toggle Dark / Light">
+        <div class="t-knob"></div>
+      </button>
+    </div>
+  </div>
+
+  <div class="wiz-wrap">
+
+    <!-- STEP 1 -->
+    <div class="wiz-step" id="ws1">
+      <div class="step-head">
+        <p class="step-eyebrow">01 — Getting Started</p>
+        <h2 class="step-title">Currency & Asset Type</h2>
+        <p class="step-sub">Select your currency first, then choose what you're evaluating.</p>
+      </div>
+
+      <!-- Currency -->
+      <div class="section-lbl">🌍 Select Your Currency</div>
+      <div class="currency-grid">
+        <div class="cur-card selected" onclick="pickCurrency('INR','₹','Indian Rupee','🇮🇳',this)">
+          <div class="cur-flag">🇮🇳</div>
+          <div class="cur-code">INR</div>
+          <div class="cur-name">Indian Rupee</div>
+          <div class="cur-sym-badge">₹</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('USD','$','US Dollar','🇺🇸',this)">
+          <div class="cur-flag">🇺🇸</div>
+          <div class="cur-code">USD</div>
+          <div class="cur-name">US Dollar</div>
+          <div class="cur-sym-badge">$</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('EUR','€','Euro','🇪🇺',this)">
+          <div class="cur-flag">🇪🇺</div>
+          <div class="cur-code">EUR</div>
+          <div class="cur-name">Euro</div>
+          <div class="cur-sym-badge">€</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('GBP','£','British Pound','🇬🇧',this)">
+          <div class="cur-flag">🇬🇧</div>
+          <div class="cur-code">GBP</div>
+          <div class="cur-name">British Pound</div>
+          <div class="cur-sym-badge">£</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('AED','د.إ','UAE Dirham','🇦🇪',this)">
+          <div class="cur-flag">🇦🇪</div>
+          <div class="cur-code">AED</div>
+          <div class="cur-name">UAE Dirham</div>
+          <div class="cur-sym-badge">د.إ</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('SGD','S$','Singapore Dollar','🇸🇬',this)">
+          <div class="cur-flag">🇸🇬</div>
+          <div class="cur-code">SGD</div>
+          <div class="cur-name">Singapore Dollar</div>
+          <div class="cur-sym-badge">S$</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('AUD','A$','Australian Dollar','🇦🇺',this)">
+          <div class="cur-flag">🇦🇺</div>
+          <div class="cur-code">AUD</div>
+          <div class="cur-name">Australian Dollar</div>
+          <div class="cur-sym-badge">A$</div>
+          <div class="cur-tick">✓</div>
+        </div>
+        <div class="cur-card" onclick="pickCurrency('CAD','C$','Canadian Dollar','🇨🇦',this)">
+          <div class="cur-flag">🇨🇦</div>
+          <div class="cur-code">CAD</div>
+          <div class="cur-name">Canadian Dollar</div>
+          <div class="cur-sym-badge">C$</div>
+          <div class="cur-tick">✓</div>
+        </div>
+      </div>
+
+      <!-- Asset type -->
+      <div class="section-lbl" style="margin-top:36px">🏷️ What Are You Evaluating?</div>
+      <div class="asset-grid">
+        <div class="asset-card" data-type="house" onclick="pickAsset('house',this)">
+          <div class="ac-emoji">🏠</div>
+          <div class="ac-title">House / Property</div>
+          <div class="ac-desc">Apartment, villa, or flat. Includes rent vs buy, payment plans & hidden costs.</div>
+          <div class="ac-tick">✓</div>
+        </div>
+        <div class="asset-card" data-type="car" onclick="pickAsset('car',this)">
+          <div class="ac-emoji">🚗</div>
+          <div class="ac-title">Car / Vehicle</div>
+          <div class="ac-desc">Depreciation forecast, running cost estimate & full EMI burden check.</div>
+          <div class="ac-tick">✓</div>
+        </div>
+        <div class="asset-card" data-type="plot" onclick="pickAsset('plot',this)">
+          <div class="ac-emoji">🌆</div>
+          <div class="ac-title">Plot / Land</div>
+          <div class="ac-desc">Investment or construction. Appreciation forecast & liquidity risk alert.</div>
+          <div class="ac-tick">✓</div>
+        </div>
+      </div>
+
+      <div class="step-actions">
+        <button class="btn-primary" id="s1Next" onclick="gotoStep(2)" disabled>Continue →</button>
+      </div>
+    </div>
+
+
+    <!-- STEP 2 -->
+    <div class="wiz-step" id="ws2" style="display:none">
+      <div class="step-head">
+        <p class="step-eyebrow">02 — Financial Profile</p>
+        <h2 class="step-title">Income, savings & expenses</h2>
+        <p class="step-sub">Track every expense with optional dependency flags for non-negotiable costs.</p>
+      </div>
+
+      <div class="section-lbl">👤 Basic Profile</div>
+      <div class="form-grid-4">
+        <div class="field">
+          <label>Monthly Income <span class="unit cur-unit">₹</span></label>
+          <input type="number" id="p_income" placeholder="e.g. 120000" min="1" oninput="liveExpenses()"/>
+        </div>
+        <div class="field">
+          <label>Age</label>
+          <input type="number" id="p_age" placeholder="e.g. 32" min="18" max="70" value="30"/>
+        </div>
+        <div class="field">
+          <label>Current Savings <span class="unit cur-unit">₹</span></label>
+          <input type="number" id="p_savings" placeholder="e.g. 2000000" min="0"/>
+        </div>
+        <div class="field">
+          <label>Existing EMIs <span class="unit cur-unit">₹</span></label>
+          <input type="number" id="p_existing" placeholder="0 if none" min="0" value="0" oninput="liveExpenses()"/>
+        </div>
+      </div>
+
+      <div class="exp-header">
+        <div class="section-lbl" style="margin:0">💳 Monthly Expenses</div>
+        <div class="exp-legend"><span class="dep-pill">D</span> = Dependency (non-negotiable)</div>
+      </div>
+
+      <div class="exp-cols-head">
+        <span>Expense Name</span>
+        <span>Amount (<span class="cur-unit">₹</span>)</span>
+        <span>Dependency?</span>
+        <span></span>
+      </div>
+      <div id="expenseRows"></div>
+      <button class="btn-add-exp" onclick="addExpense()">＋ Add Expense</button>
+
+      <div class="exp-summary">
+        <div class="es-box">
+          <div class="es-lbl">Total Expenses</div>
+          <div class="es-val" id="expTotal">—</div>
+        </div>
+        <div class="es-box">
+          <div class="es-lbl">Dependency Expenses</div>
+          <div class="es-val dep" id="expDepTotal">—</div>
+        </div>
+        <div class="es-box">
+          <div class="es-lbl">Free Cash (pre-asset)</div>
+          <div class="es-val" id="expFreeCash">—</div>
+        </div>
+      </div>
+
+      <div id="profileEligBox" style="display:none" class="elig-box"></div>
+
+      <div class="step-actions">
+        <button class="btn-ghost" onclick="gotoStep(1)">← Back</button>
+        <button class="btn-primary" onclick="runProfileCheck()">Check Eligibility →</button>
+      </div>
+    </div>
+
+
+    <!-- STEP 3 -->
+    <div class="wiz-step" id="ws3" style="display:none">
+      <div class="step-head">
+        <p class="step-eyebrow">03 — Asset Details</p>
+        <h2 class="step-title">About the <span id="assetNameInline" class="title-accent">asset</span></h2>
+        <p class="step-sub" id="assetSubline">Enter the details to run the full analysis.</p>
+      </div>
+
+      <!-- HOUSE -->
+      <div id="fHouse">
+        <div class="section-lbl">🏠 Property Details</div>
+        <div class="form-grid">
+          <div class="field"><label>Property Price <span class="unit cur-unit">₹</span></label><input type="number" id="h_price"/></div>
+          <div class="field"><label>Down Payment <span class="unit cur-unit">₹</span></label><input type="number" id="h_down"/></div>
+          <div class="field"><label>Interest Rate <span class="unit">%</span></label><input type="number" id="h_rate" step="0.1" placeholder="e.g. 8.5"/></div>
+          <div class="field"><label>Loan Tenure <span class="unit">Years</span></label><input type="number" id="h_tenure" placeholder="e.g. 20" min="1" max="40"/></div>
+          <div class="field"><label>Property Type</label><select id="h_type"><option>1 BHK</option><option selected>2 BHK</option><option>3 BHK</option><option>4 BHK+</option><option>Villa</option></select></div>
+          <div class="field"><label>Carpet Area <span class="unit">sq ft</span></label><input type="number" id="h_area" placeholder="e.g. 950"/></div>
+          <div class="field field-full">
+            <label>Property Status</label>
+            <div class="seg" id="hStatusSeg">
+              <button class="seg-btn active" onclick="setHStatus('ready',this)">Ready to Move</button>
+              <button class="seg-btn" onclick="setHStatus('uc',this)">Under Construction</button>
+            </div>
+          </div>
+        </div>
+        <div id="payPlanBox" style="display:none">
+          <div class="section-lbl">📋 Payment Plan</div>
+          <div class="seg" id="planModeSeg" style="margin-bottom:14px">
+            <button class="seg-btn active" onclick="setPlanMode('simple',this)">Simple</button>
+            <button class="seg-btn" onclick="setPlanMode('advanced',this)">Advanced (Stage-wise)</button>
+          </div>
+          <div id="simplePlanNote" class="info-note">ℹ️ Simple: Down payment upfront, balance via bank loan during construction.</div>
+          <div id="advPlanWrap" style="display:none">
+            <div class="stage-head"><span>Stage Name</span><span>% of Price</span><span>Month No.</span><span></span></div>
+            <div id="stageRows"></div>
+            <button class="btn-add-stage" onclick="addStage()">＋ Add Stage</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAR -->
+      <div id="fCar" style="display:none">
+        <div class="section-lbl">🚗 Vehicle Details</div>
+        <div class="form-grid">
+          <div class="field"><label>Car Type</label><select id="c_type"><option>Hatchback</option><option selected>Sedan</option><option>SUV</option><option>MUV</option><option>Luxury</option></select></div>
+          <div class="field"><label>On-Road Price <span class="unit cur-unit">₹</span></label><input type="number" id="c_price"/></div>
+          <div class="field"><label>Down Payment <span class="unit cur-unit">₹</span></label><input type="number" id="c_down"/></div>
+          <div class="field"><label>Interest Rate <span class="unit">%</span></label><input type="number" id="c_rate" step="0.1" placeholder="e.g. 9.5"/></div>
+          <div class="field"><label>Loan Tenure <span class="unit">Years</span></label><input type="number" id="c_tenure" placeholder="e.g. 5" min="1" max="8"/></div>
+          <div class="field"><label>Fuel Type</label><select id="c_fuel"><option>Petrol</option><option>Diesel</option><option>Electric</option><option>CNG</option></select></div>
+        </div>
+      </div>
+
+      <!-- PLOT -->
+      <div id="fPlot" style="display:none">
+        <div class="section-lbl">🌆 Plot Details</div>
+        <div class="form-grid">
+          <div class="field"><label>Plot Price <span class="unit cur-unit">₹</span></label><input type="number" id="pl_price"/></div>
+          <div class="field"><label>Plot Size <span class="unit">sq yd</span></label><input type="number" id="pl_size" placeholder="e.g. 200"/></div>
+          <div class="field"><label>Location Type</label><select id="pl_loc"><option value="urban">Urban</option><option value="suburban" selected>Suburban</option><option value="rural">Rural</option><option value="highway">Highway</option></select></div>
+          <div class="field"><label>Purpose</label><select id="pl_purpose"><option value="investment">Investment (Resale)</option><option value="construction">Build a House</option></select></div>
+          <div class="field"><label>Down / Cash <span class="unit cur-unit">₹</span></label><input type="number" id="pl_down"/></div>
+          <div class="field"><label>Loan Rate <span class="unit">% (0=cash)</span></label><input type="number" id="pl_rate" value="0" step="0.1"/></div>
+          <div class="field"><label>Tenure <span class="unit">Years (0=cash)</span></label><input type="number" id="pl_tenure" value="0" min="0" max="30"/></div>
+        </div>
+      </div>
+
+      <div id="assetErrBox" class="err-note" style="display:none"></div>
+
+      <div class="step-actions">
+        <button class="btn-ghost" onclick="gotoStep(2)">← Back</button>
+        <button class="btn-primary" id="analyzeBtn" onclick="doAnalyze()">
+          <span id="analyzeTxt">Run Full Analysis →</span>
+          <span id="analyzeLoad" style="display:none">Analysing…</span>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- STEP 4: RESULTS -->
+    <div class="wiz-step" id="ws4" style="display:none">
+
+      <!-- Hero badge -->
+      <div class="res-hero" id="resHero">
+        <div class="rh-shimmer"></div>
+        <div class="rh-top">
+          <span class="rh-tag" id="rhTag"></span>
+          <span class="rh-cur" id="rhCur"></span>
+          <span class="rh-conf" id="rhConf"></span>
+        </div>
+        <div class="rh-icon" id="rhIcon"></div>
+        <div class="rh-label" id="rhLabel"></div>
+        <p class="rh-summary" id="rhSummary"></p>
+      </div>
+
+      <!-- Stress meter -->
+      <div class="stress-card" id="stressCard">
+        <div class="sc-left">
+          <div class="sc-title">Financial Stress Score</div>
+          <div class="sc-score-row">
+            <span class="sc-score" id="scScore">—</span>
+            <span class="sc-denom">/100</span>
+          </div>
+          <div class="sc-level" id="scLevel"></div>
+        </div>
+        <div class="sc-right">
+          <div class="sc-track-wrap">
+            <div class="sc-bar-track">
+              <div class="sc-bar-fill" id="scBarFill"></div>
+              <div class="sc-tick" style="left:35%"><span>35</span></div>
+              <div class="sc-tick" style="left:65%"><span>65</span></div>
+            </div>
+          </div>
+          <div class="sc-zone-labels">
+            <span class="sz-low">Low Risk</span>
+            <span class="sz-med">Medium</span>
+            <span class="sz-high">High Risk</span>
+          </div>
+          <p class="sc-desc" id="scDesc"></p>
+        </div>
+      </div>
+
+      <!-- Key metrics -->
+      <div class="metrics-row" id="metricsRow"></div>
+
+      <!-- Three insights -->
+      <div class="insights-row">
+        <div class="insight-card">
+          <div class="ic-title">📊 Top Expenses</div>
+          <div id="topExpList" class="ic-list"></div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🔗 Dependencies</div>
+          <div id="depList" class="ic-list"></div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">📈 DTI Ratio</div>
+          <div class="dti-mini">
+            <div class="dti-track"><div class="dti-fill" id="dtiMiniFill"></div></div>
+            <div class="dti-val" id="dtiMiniVal">—</div>
+            <div class="dti-zones">
+              <span class="dz-s">Safe</span><span class="dz-r">Risky</span><span class="dz-d">Danger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart alternative -->
+      <div class="alt-banner" id="altBanner" style="display:none">
+        <div class="ab-ico">💡</div>
+        <div><div class="ab-title">Smart Alternative</div><p class="ab-body" id="abBody"></p></div>
+      </div>
+
+      <!-- Worst month -->
+      <div class="worst-banner" id="worstAlert" style="display:none">
+        <div class="wb-ico">🔴</div>
+        <div><div class="wb-title">Worst Month Detected</div><p class="wb-body" id="waBody"></p></div>
+      </div>
+
+      <!-- Rent vs Buy -->
+      <div class="result-card" id="rvbCard" style="display:none">
+        <h3 class="rc-title">📉 Rent vs. Buy — 10-Year Comparison</h3>
+        <div class="rvb-cols" id="rvbCols"></div>
+        <p class="rvb-note" id="rvbNote"></p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="result-card" id="tlCard" style="display:none">
+        <h3 class="rc-title">📆 Cash Flow Timeline</h3>
+        <p class="rc-sub">Stage-wise payments vs projected savings</p>
+        <div class="tl-wrap">
+          <table class="tl-table">
+            <thead><tr><th>Stage</th><th>Month</th><th>%</th><th>Amount Due</th><th>Proj. Savings</th><th>Shortfall</th><th>Status</th></tr></thead>
+            <tbody id="tlBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Plot appreciation -->
+      <div class="result-card" id="apprCard" style="display:none">
+        <h3 class="rc-title">📈 Appreciation Forecast</h3>
+        <div class="appr-cols" id="apprCols"></div>
+      </div>
+
+      <!-- Flags -->
+      <div class="result-card">
+        <h3 class="rc-title">🔍 Detailed Analysis</h3>
+        <div id="flagsWrap" class="flags-wrap"></div>
+      </div>
+
+      <div class="res-actions">
+        <button class="btn-ghost" onclick="gotoStep(3)">← Adjust Inputs</button>
+        <button class="btn-primary" onclick="goLanding()">Analyse Another Asset</button>
+      </div>
+    </div>
+
+  </div><!-- /wiz-wrap -->
+</div><!-- /appPage -->
+
+<!-- SEO: Rich semantic footer -->
+<footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Build<span class="logo-accent">My</span>Asset</div>
+      <p class="footer-tagline">India's smart financial decision engine for property, vehicles, and land.</p>
+    </div>
+    <div class="footer-links">
+      <div class="fl-col">
+        <div class="fl-head">What We Analyse</div>
+        <a class="fl-link" href="#" onclick="quickStart('house');return false;">🏠 House / Property</a>
+        <a class="fl-link" href="#" onclick="quickStart('car');return false;">🚗 Car / Vehicle</a>
+        <a class="fl-link" href="#" onclick="quickStart('plot');return false;">🌆 Plot / Land</a>
+      </div>
+      <div class="fl-col">
+        <div class="fl-head">Key Features</div>
+        <span class="fl-item">EMI Calculator</span>
+        <span class="fl-item">Rent vs Buy Analysis</span>
+        <span class="fl-item">Financial Stress Score</span>
+        <span class="fl-item">Hidden Cost Detection</span>
+        <span class="fl-item">Income Shock Simulation</span>
+      </div>
+      <div class="fl-col">
+        <div class="fl-head">Currencies Supported</div>
+        <span class="fl-item">🇮🇳 Indian Rupee (INR)</span>
+        <span class="fl-item">🇺🇸 US Dollar (USD)</span>
+        <span class="fl-item">🇬🇧 British Pound (GBP)</span>
+        <span class="fl-item">🇪🇺 Euro (EUR)</span>
+        <span class="fl-item">🇦🇪 UAE Dirham (AED)</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-seo-text">
+    <p><strong>BuildMyAsset</strong> is a free financial decision tool that helps you answer: <em>"Should I buy this house, car, or plot?"</em> Our engine calculates your <strong>EMI</strong>, <strong>debt-to-income ratio</strong>, emergency fund safety, hidden registration costs, and gives you a clear <strong>Safe / Risky / Not Recommended</strong> verdict. Whether you're a first-time home buyer in India or evaluating a property investment, BuildMyAsset provides a <strong>rent vs buy comparison</strong>, cash flow timeline, and <strong>financial stress score</strong> — all free, no signup required.</p>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 BuildMyAsset · Educational tool — not financial advice.</span>
+    <span>Always consult a certified financial advisor before investing.</span>
+  </div>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
